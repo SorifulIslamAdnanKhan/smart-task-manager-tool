@@ -36,7 +36,7 @@ const AddTask = () => {
                         userEmail: user?.email,
                     }
 
-                    fetch(`http://localhost:5000/task`, {
+                    fetch(`https://smart-task-manager-tool-server.vercel.app/task`, {
                         method: 'POST',
                         headers: {
                             'content-type': 'application/json',

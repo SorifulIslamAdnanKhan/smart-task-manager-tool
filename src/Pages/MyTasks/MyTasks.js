@@ -13,7 +13,7 @@ const MyTasks = () => {
         queryKey: ['tasks'],
         queryFn: async () => {
             try {
-                const res = fetch(`http://localhost:5000/my-tasks?userEmail=${user?.email}`);
+                const res = fetch(`https://smart-task-manager-tool-server.vercel.app/my-tasks?userEmail=${user?.email}`);
                 const data = await (await res).json();
                 return data
             }
@@ -24,7 +24,7 @@ const MyTasks = () => {
     });
 
     const handleDelete = (id) => {
-        fetch(`http://localhost:5000/task/${id}`, {
+        fetch(`https://smart-task-manager-tool-server.vercel.app/task/${id}`, {
             method: 'DELETE',
         })
             .then(res => res.json())
@@ -39,7 +39,7 @@ const MyTasks = () => {
     const handleComplete = (task) => {
         const complete = task.compelte;
 
-        fetch(`http://localhost:5000/task/${task?._id}`, {
+        fetch(`https://smart-task-manager-tool-server.vercel.app/task/${task?._id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json',

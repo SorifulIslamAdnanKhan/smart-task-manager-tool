@@ -30,7 +30,7 @@ export const router = createBrowserRouter([
             {
                 path: '/update/:id',
                 element: <PrivateRoute><UpdateTask></UpdateTask></PrivateRoute>,
-                loader: ({params})=> fetch(`http://localhost:5000/task/${params.id}`)
+                loader: ({params})=> fetch(`https://smart-task-manager-tool-server.vercel.app/task/${params.id}`)
             },
             {
                 path: '/completed-tasks',

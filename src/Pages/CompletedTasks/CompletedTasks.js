@@ -17,7 +17,7 @@ const CompletedTasks = () => {
         queryKey: ['tasks'],
         queryFn: async () => {
             try {
-                const res = fetch(`http://localhost:5000/tasks/complete`);
+                const res = fetch(`https://smart-task-manager-tool-server.vercel.app/tasks/complete`);
                 const data = await (await res).json();
                 return data
             }
@@ -36,7 +36,7 @@ const CompletedTasks = () => {
             userEmail: user?.email,
         }
 
-        fetch(`http://localhost:5000/comment`, {
+        fetch(`https://smart-task-manager-tool-server.vercel.app/comment`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
@@ -54,7 +54,7 @@ const CompletedTasks = () => {
         queryKey: ['comments'],
         queryFn: async () => {
             try {
-                const res = fetch(`http://localhost:5000/my-comments?userEmail=${user?.email}`);
+                const res = fetch(`https://smart-task-manager-tool-server.vercel.app/my-comments?userEmail=${user?.email}`);
                 const data = await (await res).json();
                 return data
             }
@@ -66,7 +66,7 @@ const CompletedTasks = () => {
 
 
     const handleDeleteNotComplete = (id) => {
-        fetch(`http://localhost:5000/tasks/complete/${id}`, {
+        fetch(`https://smart-task-manager-tool-server.vercel.app/tasks/complete/${id}`, {
             method: 'DELETE',
         })
             .then(res => res.json())
@@ -81,7 +81,7 @@ const CompletedTasks = () => {
     const handleNotComplete = (task) => {
         const complete = task.compelte;
 
-        fetch(`http://localhost:5000/tasks/complete/${task?._id}`, {
+        fetch(`https://smart-task-manager-tool-server.vercel.app/tasks/complete/${task?._id}`, {
             method: 'PATCH',
             headers: {
                 'content-type': 'application/json',

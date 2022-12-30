@@ -12,7 +12,7 @@ const UpdateTask = () => {
     const handleUpdate = (event) => {
         event.preventDefault();
 
-        fetch(`http://localhost:5000/task/${singleTask._id}`, {
+        fetch(`https://smart-task-manager-tool-server.vercel.app/task/${singleTask._id}`, {
             method: 'PATCH',
             headers: {
                 'content-type': 'application/json',
