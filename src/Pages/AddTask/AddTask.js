@@ -30,10 +30,10 @@ const AddTask = () => {
                 console.log(photoData);
                 if (photoData.success) {
                     const task = {
+                        complete: 'False',
                         name: data.name,
                         image: photoData.data.url,
                         userEmail: user?.email,
-                        description: data.description
                     }
 
                     fetch(`http://localhost:5000/task`, {
@@ -81,17 +81,6 @@ const AddTask = () => {
                                 { required: 'Image is required.' })}
                             className="input input-bordered w-full" />
                         {errors.image && <p className='text-red-600'>{errors.image.message}</p>}
-                    </div>
-                    <div className="form-control w-full mt-6">
-                        <label className="label">
-                            <span className="label-text">Task Description</span>
-                        </label>
-                        <textarea
-                            type='text'
-                            {...register('description',
-                                { required: 'Task description is required.' })}
-                            className="input input-bordered w-full  bg-gray-200 p-3" />
-                        {errors.description && <p className='text-red-600'>{errors.description.message}</p>}
                     </div>
                     <div className='mt-6 bg-blue-800'>
                         <input className='p-3 w-full form-control text-white' value='Submit' type="submit" />

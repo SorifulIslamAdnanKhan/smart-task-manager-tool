@@ -15,7 +15,6 @@ import { AuthContext } from '../../../contexts/AuthProvider';
 
 function ResponsiveAppBar() {
 
-
     const { user, logout } = React.useContext(AuthContext);
 
     const handleLogout = () => {
@@ -29,7 +28,7 @@ function ResponsiveAppBar() {
     const handleOpenNavMenu = (event) => {
         setAnchorElNav(event.currentTarget);
     };
-   
+
     const handleCloseNavMenu = () => {
         setAnchorElNav(null);
     };
@@ -98,8 +97,8 @@ function ResponsiveAppBar() {
                                             </>
                                             :
                                             <>
-                                                <li><Link to='/' >Login</Link></li>
-                                                <li><Link to='/signup'>Sign Up</Link></li>
+                                                <li><Link to='/'>Sign Up</Link></li>
+                                                <li><Link to='/login' >Login</Link></li>
                                             </>
                                     }
                                 </Typography>
@@ -142,8 +141,8 @@ function ResponsiveAppBar() {
                                     </>
                                     :
                                     <>
-                                        <Link to='/' className='mx-2'>Login</Link>
-                                        <Link to='/signup'>Sign Up</Link>
+                                        <Link to='/' className='mx-2'>Sign Up</Link>
+                                        <Link to='/login' >Login</Link>
                                     </>
                             }
 
